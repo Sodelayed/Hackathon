@@ -81,8 +81,6 @@ export class DinoGameModule extends Module {
     let scoreInterval 
     let isGameOver = false
 
-    let cactusPosition = 1000
-
     let cactusPosition = 1000 
 
     const dinoImage = new Image();
