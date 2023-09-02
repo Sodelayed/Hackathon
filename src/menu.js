@@ -64,4 +64,6 @@ contextMenu.add(randomSoundModule);
 // Создание модуля для кастомного сообщения и добавление его в контекстное меню
 const customMessageModule = new CustomMessageModule();
 contextMenu.add(customMessageModule);
-
+// Создание модуля для ракетной команды и добавление его в контекстное меню
+const missileCommandModule = new AsteroidEvasionModule();
+contextMenu.add(missileCommandModule);
