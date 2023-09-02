@@ -7,6 +7,7 @@ import { RandomSoundModule } from "./modules/sound.module"; // Импорт мо
 import { CustomMessageModule } from "./modules/customMessage.module" // Импорт модуля кастомного сообщения
 
 export class ContextMenu extends Menu {
+  
     constructor(selector) {
         super(selector);
         this.el.style.display = 'none';
@@ -63,3 +64,8 @@ contextMenu.add(randomSoundModule);
 // Создание модуля для кастомного сообщения и добавление его в контекстное меню
 const customMessageModule = new CustomMessageModule();
 contextMenu.add(customMessageModule);
+=======
+   
+}
+  
+
