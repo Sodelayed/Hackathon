@@ -1,10 +1,5 @@
 import { Menu } from './core/menu';
-import { BackgroundModule } from './modules/background.module'; // Импорт модуля генерации случайного цвета
-import { ClicksModule } from './modules/clicks.module'; // Импорт модуля подсчета кликов
-import { ShapeModule } from "./modules/shape.module"; // Импорт модуля генерации фигур
-import { TimerModule } from "./modules/timer.module"; // Импорт модуля таймера
-import { RandomSoundModule } from "./modules/sound.module"; // Импорт модуля случайного звука
-import { CustomMessageModule } from "./modules/customMessage.module" // Импорт модуля кастомного сообщения
+
 import { AsteroidEvasionModule } from "./modules/asteroidEvasion.module" // Импорт модуля игры про астероиды
 import { TicTacToeModule } from "./modules/tictactoe.module"
 import { SnakeGame } from "./modules/snakeGame"; // Импорт модуля игры Змейка
