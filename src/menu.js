@@ -5,9 +5,9 @@ import { ShapeModule } from "./modules/shape.module"; // Импорт модул
 import { TimerModule } from "./modules/timer.module"; // Импорт модуля таймера
 import { RandomSoundModule } from "./modules/sound.module"; // Импорт модуля случайного звука
 import { CustomMessageModule } from "./modules/customMessage.module" // Импорт модуля кастомного сообщения
+import { AsteroidEvasionModule } from "./modules/asteroidEvasion.module"; // Импорт модуля ракетной команды
 
 export class ContextMenu extends Menu {
-  
     constructor(selector) {
         super(selector);
         this.el.style.display = 'none';
@@ -64,8 +64,6 @@ contextMenu.add(randomSoundModule);
 // Создание модуля для кастомного сообщения и добавление его в контекстное меню
 const customMessageModule = new CustomMessageModule();
 contextMenu.add(customMessageModule);
-=======
-   
-}
-  
-
+// Создание модуля для ракетной команды и добавление его в контекстное меню
+const missileCommandModule = new AsteroidEvasionModule();
+contextMenu.add(missileCommandModule);
