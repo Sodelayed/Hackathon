@@ -1,12 +1,4 @@
 import './styles.css'
-import { Menu } from "./core/menu"
+import { ContextMenu } from './menu';
 
-// Временная мера для понимания работы)
-
-let work = new Menu('ul')
-
-document.body.addEventListener("contextmenu", event => {
-    event.preventDefault()
-    work.open()
-  })
-
+const menu = new ContextMenu('.menu');
