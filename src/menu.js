@@ -7,6 +7,7 @@ import { RandomSoundModule } from "./modules/sound.module"; // Импорт мо
 import { CustomMessageModule } from "./modules/customMessage.module" // Импорт модуля кастомного сообщения
 import { AsteroidEvasionModule } from "./modules/asteroidEvasion.module" // Импорт модуля игры про астероиды
 import { TicTacToeModule } from "./modules/tictactoe.module"
+import { SnakeGame } from "./modules/snakeGame.module"; // Импорт модуля игры Змейка
 
 export class ContextMenu extends Menu {
   
@@ -72,3 +73,6 @@ contextMenu.add(missileCommandModule);
 
 const tictactoeModule = new TicTacToeModule()
 contextMenu.add(tictactoeModule)
+// Создание модуля для игры Змейка и добавление его в контекстное меню
+const snakeGameModule = new SnakeGame();
+contextMenu.add(snakeGameModule);
