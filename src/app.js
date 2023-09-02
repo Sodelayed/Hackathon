@@ -1,13 +1,6 @@
 import './styles.css'
-import { ContextMenu } from "./menu"
 
-// Временная мера для понимания работы)
+import { ContextMenu } from './menu';
 
-let work = new ContextMenu('ul')
+const menu = new ContextMenu('.menu');
 
-document.body.addEventListener("contextmenu", event => {
-    event.preventDefault()
-    work.open()
-  })
-
-console.log ('branch test')
