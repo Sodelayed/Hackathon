@@ -64,8 +64,4 @@ contextMenu.add(randomSoundModule);
 // Создание модуля для кастомного сообщения и добавление его в контекстное меню
 const customMessageModule = new CustomMessageModule();
 contextMenu.add(customMessageModule);
-=======
-   
-}
-  
 
