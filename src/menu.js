@@ -5,6 +5,7 @@ import { ShapeModule } from "./modules/shape.module"; // Импорт модул
 import { TimerModule } from "./modules/timer.module"; // Импорт модуля таймера
 import { RandomSoundModule } from "./modules/sound.module"; // Импорт модуля случайного звука
 import { CustomMessageModule } from "./modules/customMessage.module" // Импорт модуля кастомного сообщения
+import { AsteroidEvasionModule } from "./modules/asteroidEvasion.module" // Импорт модуля игры про астероиды
 
 export class ContextMenu extends Menu {
   
