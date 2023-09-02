@@ -18,13 +18,14 @@ export class DinoGameModule extends Module {
     const ground = document.createElement('img')
     ground.className = 'dino-ground'
     ground.src = './public/ground.png'
-    const cactus = document.createElement('img')
+    const cactus = new Image()
     cactus.className = 'dino-cactus'
     cactus.src = './public/cactus.png'
-    const dino = document.createElement('img')
+    const dino = new Image()
     dino.className = 'dino-dino'
     dino.src = './public/dino.png'
 
+    document.body.append(world)
     world.append(scoreEl, startEl, ground, cactus, dino)
 
 
@@ -36,9 +37,9 @@ export class DinoGameModule extends Module {
     let cactusPosition = 1000 
 
     const dinoImage = new Image();
-    dinoImage.src = '/.png'; 
+    dinoImage.src = './public/dino.png'; 
     const cactusImage = new Image();
-    cactusImage.src = 'путь_к_изображению_кактуса.png'; 
+    cactusImage.src = './public/cactus.png'; 
   
     document.addEventListener('keydown', startGame)
   
