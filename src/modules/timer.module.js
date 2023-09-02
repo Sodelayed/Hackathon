@@ -34,5 +34,6 @@ export class TimerModule extends Module {
                 document.body.removeChild(timerBox);
             }
         }, 1000);
+        console.log(4+4)
     }
 }
