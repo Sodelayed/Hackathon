@@ -25,8 +25,54 @@ export class DinoGameModule extends Module {
     dino.className = 'dino-dino'
     dino.src = './public/dino.png'
 
+
+    // Получаем элементы с помощью JavaScript
+    // const dinoWorld = document.querySelector('.dino-world')
+    // const dinoScore = document.querySelector('.dino-score')
+    // const dinoStartScreen = document.querySelector('.dino-start-screen')
+    // const dinoGround = document.querySelector('.dino-ground')
+    // const dinoDino = document.querySelector('.dino-dino')
+    // const dinoCactus = document.querySelector('.dino-cactus')
+
+
+    world.style.overflow = 'hidden'
+    world.style.position = 'relative'
+    world.style.width = '600px'
+    world.style.height = '200px'
+    world.style.top = '200px'
+
+    startEl.style.position = 'absolute'
+    startEl.style.fontSize = '3vmin'
+    startEl.style.right = '3vmin'
+    startEl.style.top = '1vmin'
+
+    scoreEl.style.position = 'absolute'
+    scoreEl.style.fontSize = '2vmin'
+    scoreEl.style.top = '50%'
+    scoreEl.style.left = '50%'
+    scoreEl.style.transform = 'translate(-50%, -50%)'
+
+    ground.style.position = 'absolute'
+    ground.style.width = '100%'
+    ground.style.bottom = '0'
+    ground.style.left = '0'
+
+    dino.style.height = '30%'
+    dino.style.left = '5%'
+    dino.style.bottom = '0'
+    dino.style.position = 'absolute'
+    dino.style.transition = 'transform 0.35s ease-in-out'
+
+    cactus.style.position = 'absolute'
+    cactus.style.height = '50px'
+    cactus.style.bottom = '0'
+
+
+
     document.body.append(world)
+
     world.append(scoreEl, startEl, ground, cactus, dino)
+    document.body.append(world)
 
 
     let isGameStarted = false
@@ -34,12 +80,16 @@ export class DinoGameModule extends Module {
     let score = 0
     let scoreInterval 
     let isGameOver = false
+
+    let cactusPosition = 1000
+
     let cactusPosition = 1000 
 
     const dinoImage = new Image();
     dinoImage.src = './public/dino.png'; 
     const cactusImage = new Image();
     cactusImage.src = './public/cactus.png'; 
+
   
     document.addEventListener('keydown', startGame)
   
