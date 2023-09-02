@@ -6,6 +6,7 @@ import { TimerModule } from "./modules/timer.module"; // Импорт модул
 import { RandomSoundModule } from "./modules/sound.module"; // Импорт модуля случайного звука
 import { CustomMessageModule } from "./modules/customMessage.module" // Импорт модуля кастомного сообщения
 import { AsteroidEvasionModule } from "./modules/asteroidEvasion.module" // Импорт модуля игры про астероиды
+import { TicTacToeModule } from "./modules/tictactoe.module"
 
 export class ContextMenu extends Menu {
   
@@ -68,3 +69,6 @@ contextMenu.add(customMessageModule);
 // Создание модуля для ракетной команды и добавление его в контекстное меню
 const missileCommandModule = new AsteroidEvasionModule();
 contextMenu.add(missileCommandModule);
+
+const tictactoeModule = new TicTacToeModule()
+contextMenu.add(tictactoeModule)
