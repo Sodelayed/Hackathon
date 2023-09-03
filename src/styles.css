@@ -151,4 +151,10 @@ body {
     display: none !important;
   }
 
+  .food {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
   /* end flappy bird */
