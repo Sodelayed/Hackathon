@@ -49,26 +49,26 @@ export class ContextMenu extends Menu {
             setBackgroundColor('#fff')
             moduleInstance.trigger()
             this.close()
-        });
+        })
 
-        this.el.appendChild(liElement);
+        this.el.appendChild(liElement)
     }
 }
 const contextMenu = new ContextMenu('.menu')
 
 // Инициализация и добавление различных модулей в контекстное меню
 
-const missileCommandModule = new AsteroidEvasionModule();
-contextMenu.add(missileCommandModule);
+const missileCommandModule = new AsteroidEvasionModule()
+contextMenu.add(missileCommandModule)
 
 const tictactoeModule = new TicTacToeModule()
 contextMenu.add(tictactoeModule)
 
-const snakeGameModule = new SnakeGame();
-contextMenu.add(snakeGameModule);
+const snakeGameModule = new SnakeGame()
+contextMenu.add(snakeGameModule)
 
 const dinoGameModule = new DinoGameModule()
-contextMenu.add(dinoGameModule);
+contextMenu.add(dinoGameModule)
 
 const flappyBirdModule = new FlappyBirdModule()
 contextMenu.add(flappyBirdModule)
