@@ -11,6 +11,7 @@ export class CustomMessageModule extends Module {
             'У меня довольный кот',
             'Сегогдня дождь',
             'Я люблю пироженку',
+            'Динозавры не летают'
         ]
     }
 
