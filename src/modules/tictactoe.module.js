@@ -9,7 +9,7 @@ export class TicTacToeModule extends Module {
         if (document.querySelector('#tictacContainer')) {
             return
           }
-
+          
         welcome.style.display = "none"
         const winConditions = [
             [0, 1, 2],
