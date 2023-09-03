@@ -1,15 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
-@import '_normalize.css';
 
 @font-face {
-    font-family: Super Mario;
-    src: url("../public/supermario286rusbylyajka.otf");
+    font-family: "Super Mario";
+    src: url("../public/fonts/supermario286rusbylyajka.otf");
 }
 
 body {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
+    min-height: 100vh;
+    font-size: 14px;
+    
+    font-family: "Super Mario", sans-serif;
+    min-height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 #container-games {
@@ -24,6 +32,16 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    user-select: none;
+}
+
+#welcome{
+    text-align: center;
+    font-size: 2rem;
+}
+#gameCanvas {
+    display: none;
+    background: #1b1a1a;
 }
 
 .menu {

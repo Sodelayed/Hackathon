@@ -170,3 +170,5 @@ export class FlappyBirdModule extends Module {
     birdCanvas.addEventListener('click', moveUp)
   }
 }
+
+// фжыдвьажыьвжфьэвдлтпдэькпдж

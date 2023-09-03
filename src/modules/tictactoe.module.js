@@ -6,6 +6,11 @@ export class TicTacToeModule extends Module {
 
     trigger(){
         
+        if (document.querySelector('#tictacContainer')) {
+            return
+          }
+          
+        welcome.style.display = "none"
         const winConditions = [
             [0, 1, 2],
             [3, 4, 5],
@@ -18,7 +23,7 @@ export class TicTacToeModule extends Module {
         ];
         let options = ["", "", "", "", "", "", "", "", ""]; 
         let currentPlayer = 'X'
-        let running = false
+        let running = true
 
         const tictacContainer = document.createElement('div')
         tictacContainer.id = "tictacContainer"
@@ -39,16 +44,12 @@ export class TicTacToeModule extends Module {
         const statusText = document.createElement('h2')
         statusText.id = "statusText"
 
-        const button = document.createElement('button')
-        button.id ="restartBtn"
-        button.textContent = 'Restart'
         tictacContainer.append(statusText)
-        tictacContainer.append(button)
+        
         
         const cells = document.querySelectorAll(".cell")
         cells.forEach(cell => cell.addEventListener("click", event => {
             const cellIndex = cell.getAttribute("id")
-            console.log(cellIndex)
     
             if(options[cellIndex] != "" || !running){
                 return
@@ -57,10 +58,6 @@ export class TicTacToeModule extends Module {
             updateCell(cell, cellIndex)
             checkWinner()
         }));
-
-        restartBtn.addEventListener("click", restartGame);
-        statusText.textContent = `${currentPlayer}'s turn`
-        running = true
 
         function updateCell(cell, index){
             options[index] = currentPlayer
@@ -93,6 +90,9 @@ export class TicTacToeModule extends Module {
             if(roundWon){
                 statusText.textContent = `${currentPlayer} wins!`
                 running = false;
+                setTimeout(() => {
+                    document.location.reload() // Перезагрузка страницы
+                }, 1000)
             }
             else if(!options.includes("")){
                 statusText.textContent = `Draw!`
@@ -103,16 +103,6 @@ export class TicTacToeModule extends Module {
             }
         }
 
-        function restartGame(){
-            currentPlayer = "X";
-            options = ["", "", "", "", "", "", "", "", ""]
-            statusText.textContent = `${currentPlayer}'s turn`
-            cells.forEach(cell => cell.textContent = "")
-            running = true
-        }
-
     };
-
-    
 
 }
