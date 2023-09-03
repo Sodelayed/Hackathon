@@ -28,10 +28,13 @@ export class TicTacToeModule extends Module {
         const aiPlayer = 'O'
         let origBoard
 
+        // Создаем таблицу
+
         const tictacContainer = document.createElement('div')
         tictacContainer.id = "tictacContainer"
         document.body.append(tictacContainer)
         const title = document.createElement('h1')
+        title.className = "tictactoe_title"
         title.textContent = "Крестики-нолики"
         tictacContainer.append(title)
         const table = document.createElement('div')
@@ -51,7 +54,8 @@ export class TicTacToeModule extends Module {
 
         tictacContainer.append(statusText)
         
-        
+        // Обрабатываем нажатие на таблицу
+
         const cells = document.querySelectorAll(".cell")
         document.querySelector("#statusText").style.display = "none"
         origBoard = Array.from(Array(9).keys());
@@ -73,7 +77,7 @@ export class TicTacToeModule extends Module {
             let gameWon = checkWin(origBoard, player)
             if (gameWon) gameOver(gameWon)
         }
-        
+        // Определяем результат
         function checkWin(board, player) {
             let plays = board.reduce((a, e, i) =>
                 (e === player) ? a.concat(i) : a, []);
@@ -122,7 +126,7 @@ export class TicTacToeModule extends Module {
             }
             return false;
         }
-        
+        // Алгоритм работы ИИ
         function minimax(newBoard, player) {
             var availSpots = emptySquares();
         

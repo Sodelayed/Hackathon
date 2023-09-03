@@ -169,12 +169,12 @@ body {
 
 /* start tictactoe */
 
-.tictactoe-title {
+.tictactoe_title {
   font-size: 27px;
   margin-bottom: 12px;
 }
 
-.tictactoe-text {
+#statusText {
   font-size: 24px;
   margin: 8px 0;
 }
