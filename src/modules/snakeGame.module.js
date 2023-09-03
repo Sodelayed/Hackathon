@@ -3,14 +3,16 @@ import {Module} from '../core/module'
 
 export class SnakeGame extends Module {
   constructor() {
-    super('snake', 'Snake Game');
+    super('snake', 'Змейка');
   }
   
   trigger() {
     // Create html (Прописать HTML)
     const snakeGame = document.createElement('div');
     snakeGame.setAttribute('id', 'snake-game');
-    snakeGame.style.backgroundColor = 'whitesmoke';
+    snakeGame.style.background = 'url(../public/snakeBackground.png) no-repeat';
+    snakeGame.style.backgroundPosition = 'center';
+    snakeGame.style.backgroundSize = '100%';
     snakeGame.style.position = 'absolute';
     snakeGame.style.left = '0';
     snakeGame.style.right = '0';
