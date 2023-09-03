@@ -7,6 +7,11 @@ export class DinoGameModule extends Module {
   }
 
   trigger() {
+    if (document.querySelector('.dino-world')) {
+      return
+    }
+
+    document.body.style.backgroundColor = '#F7F7F7'
     const world = document.createElement('div')
     world.classList = 'dino-world'
     const scoreEl = document.createElement('div')
@@ -135,7 +140,7 @@ export class DinoGameModule extends Module {
     function gameOver() {
       isGameOver = true
       clearInterval(scoreInterval)
-      alert(`Ваш счёт: ${score}\nОбновите страницу, чтобы сыграть ещё раз`)
+      alert(`Ваш счёт: ${score}\nВы самоубились, начните заново!`)
     }
   
     function checkCollision() {
