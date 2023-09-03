@@ -100,6 +100,13 @@ body {
 }
 
 
+.welcome__title {
+  font-size: 60px;
+}
+.welcome__desc {
+  font-size: 30px;
+}
+
 /* start flappy bird */
 .bird {
     position: relative;
@@ -158,3 +165,18 @@ body {
   }
 
   /* end flappy bird */
+
+
+/* start tictactoe */
+
+.tictactoe-title {
+  font-size: 27px;
+  margin-bottom: 12px;
+}
+
+.tictactoe-text {
+  font-size: 24px;
+  margin: 8px 0;
+}
+
+/* end tictactoe */
