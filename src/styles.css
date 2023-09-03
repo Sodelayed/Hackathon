@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+@import '_normalize.css';
 
 body {
     display: flex;
@@ -6,6 +7,10 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #000;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    width: 100%;
 }
 
 * {
@@ -14,12 +19,15 @@ body {
     box-sizing: border-box;
 }
 
-body {
-    font-size: 14px;
-    font-family: 'Roboto', sans-serif;
-    height: 100vh;
-    width: 100%;
-    padding: 2rem;
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    padding: 0 12px;
+}
+
+.content {
 }
 
 .menu {
@@ -48,3 +56,50 @@ body {
 .menu .menu-item:hover {
     background: #343434;
 }
+
+/* start flappy bird */
+.bird {
+    width: 288px;
+    height: 512px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .bird__content {
+    position: relative;
+    width: 288px;
+    height: 512px;
+  }
+  .bird__menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../public/images/flappyBird/bgMenu.png);
+    background-size: cover;
+    background-position: center;
+  }
+  .bird__menu_content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .bird__menu_start {
+    position: absolute;
+    bottom: 25%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transition: all 0.3s;
+  }
+  .bird__menu_start:hover {
+    transition: all 0.3s;
+    opacity: 0.7;
+  }
+  
+  .d-none {
+    display: none !important;
+  }
+
+  /* end flappy bird */

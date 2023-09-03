@@ -1,15 +1,67 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Context Menu</title>
-</head>
-<body>
-<canvas id="gameCanvas" width="800" height="600"></canvas>
-<ul class="menu" id="menu"></ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="ie=edge"
+    />
+    <title>Context Menu</title>
+  </head>
+  <body>
+    <ul
+      class="menu"
+      id="menu"
+    ></ul>
 
-</body>
+    <div class="container">
+      <div class="content">
+        <canvas
+          id="gameCanvas"
+          class="d-none"
+        ></canvas>
+
+        <!-- start game flappy bird -->
+        <div
+          class="bird d-none"
+          id="flappyBird"
+        >
+          <div
+            class="bird__content"
+            id="bird-content"
+          >
+            <!-- <canvas
+            id="birdCanvas"
+            width="288"
+            height="512"
+          ></canvas> -->
+
+            <div
+              class="bird__menu"
+              id="birdMenu"
+            >
+              <div class="bird__menu_content">
+                <button
+                  class="bird__menu_start"
+                  id="btnStartGame"
+                >
+                  <img
+                    src="./public/images/flappyBird/bgButton.png"
+                    alt=""
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end game flappy bird -->
+      </div>
+      <!-- end content -->
+    </div>
+    <!-- end container -->
+  </body>
 </html>
