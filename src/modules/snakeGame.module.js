@@ -26,7 +26,7 @@ export class SnakeGame extends Module {
     previewHTML.setAttribute('id', 'preview');
 
     const previewImage = document.createElement('img');
-    previewImage.src = '../SnakeGameInclusives/snakeGif.gif';
+    previewImage.src = '../public/snakeGif.gif';
     previewImage.alt = 'WOOOOOOOOOOOOOOOOOOOW';
     previewImage.style.display= 'block';
     previewImage.style.marginLeft= 'auto';
@@ -158,7 +158,7 @@ export class SnakeGame extends Module {
       const foodElement = document.createElement('div');
       foodElement.style.gridRowStart = food.y;
       foodElement.style.gridColumnStart = food.x;
-      foodElement.style.backgroundImage = "url('../SnakeGameInclusives/meat.png')";
+      foodElement.style.backgroundImage = "url('../public/meat.png')";
       foodElement.classList.add('food');
       gameBoard.appendChild(foodElement);
     };
