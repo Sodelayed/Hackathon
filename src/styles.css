@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+@import '_normalize.css';
 
 @font-face {
     font-family: Super Mario;
@@ -6,32 +7,23 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #000;
+    min-height: 100vh;
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
     min-height: 100vh;
     width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 1200px;
-    padding: 0 12px;
-}
-
-.content {
 }
 
 .menu {
@@ -87,17 +79,14 @@ body {
 
 /* start flappy bird */
 .bird {
+    position: relative;
     width: 288px;
     height: 512px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .bird__content {
-    position: relative;
-    width: 288px;
-    height: 512px;
-  }
+ 
   .bird__menu {
     position: absolute;
     top: 0;
@@ -108,19 +97,28 @@ body {
     background-size: cover;
     background-position: center;
   }
+
   .bird__menu_content {
     position: relative;
     width: 100%;
     height: 100%;
   }
+
   .bird__menu_start {
     position: absolute;
+    width: 153px;
+    height: 42px;
+    background-image: url(../public/images/flappyBird/bgButton.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
     bottom: 25%;
     left: 0;
     right: 0;
     margin: 0 auto;
     transition: all 0.3s;
   }
+
   .bird__menu_start:hover {
     transition: all 0.3s;
     opacity: 0.7;

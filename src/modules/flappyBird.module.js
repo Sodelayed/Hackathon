@@ -1,6 +1,6 @@
 // click.module.js
 import { Module } from '../core/module'
-
+import { setBackgroundImage } from '../utils'
 export class FlappyBirdModule extends Module {
   constructor() {
     super('flappyBird', 'Flappy Bird')
@@ -8,15 +8,33 @@ export class FlappyBirdModule extends Module {
 
   trigger() {
     const flappyBird = document.querySelector('#flappyBird')
-    flappyBird.classList.remove('d-none')
     this.start()
   }
 
+  #createElement(tag, className) {
+    const element = document.createElement(tag)
+
+    if (className) {
+      element.className = className
+    }
+    return element
+  }
+
   start() {
-    const birdMenu = document.querySelector('#birdMenu')
-    const btnStartGame = document.querySelector('#btnStartGame')
-    const birdCanvas = document.querySelector('#gameCanvas')
+    setBackgroundImage('url(./public/images/flappyBird/bg-body.jpg)')
+
+    const birdContainer = this.#createElement('div', 'bird')
+    const birdMenu = this.#createElement('div', 'bird__menu')
+    const birdMenuContent = this.#createElement('div', 'bird__menu_content')
+    const btnStartGame = this.#createElement('button', 'bird__menu_start')
+    const birdCanvas = this.#createElement('canvas')
     const context = birdCanvas.getContext('2d')
+
+    birdMenuContent.append(btnStartGame)
+    birdMenu.append(birdMenuContent)
+    birdContainer.append(birdMenu, birdCanvas)
+
+    document.body.append(birdContainer)
 
     birdCanvas.width = 288
     birdCanvas.height = 512
@@ -45,12 +63,13 @@ export class FlappyBirdModule extends Module {
     gameOverAudio.src = './public/audio/gameOver.mp3'
 
     //Отступ между трубами
-    const GAP = 120
+    const GAP = 140
 
-    //Позиция птички
+    // Птичка
     let xPosBird = 10
     let yPosBird = 150
-    const GRAVITATION = 1.5
+    const GRAVITATION = 2.2
+    const JUMP = 40
 
     //Создание  блоков
     let pipes = [
@@ -78,7 +97,8 @@ export class FlappyBirdModule extends Module {
     }
 
     function startGame() {
-      birdCanvas.classList.remove('d-none')
+      // birdCanvas.classList.remove('d-none')
+      birdMenu.classList.add('d-none')
       isStartGame = true
       draw()
     }
@@ -94,9 +114,9 @@ export class FlappyBirdModule extends Module {
         context.drawImage(pipeUp, pipes[i].x, pipes[i].y)
         context.drawImage(pipeBottom, pipes[i].x, pipes[i].y + pipeUp.height + GAP)
 
-        pipes[i].x--
+        pipes[i].x -= 2
 
-        if (pipes[i].x === 100) {
+        if (pipes[i].x === 90) {
           pipes.push({
             x: birdCanvas.width,
             y: Math.floor(Math.random() * pipeUp.height) - pipeUp.height
@@ -118,7 +138,7 @@ export class FlappyBirdModule extends Module {
           stopGame()
         }
 
-        if (pipes[i].x === 5) {
+        if (pipes[i].x === 4) {
           score++
           scoreAudio.play()
         }
@@ -137,12 +157,8 @@ export class FlappyBirdModule extends Module {
     }
 
     btnStartGame.addEventListener('click', () => {
-      birdMenu.classList.add('d-none')
       startGame()
     })
-
-    //Взлет птички
-    const JUMP = 30
 
     function moveUp() {
       yPosBird -= JUMP
