@@ -1,6 +1,7 @@
 // dinoGame.module.js
 import {Module} from '../core/module'
 import { addGameInContainerGames } from '../utils'
+import { setBackgroundColor } from '../utils'
 
 export class DinoGameModule extends Module {
   constructor() {
@@ -12,7 +13,7 @@ export class DinoGameModule extends Module {
       return
     }
 
-    document.body.style.backgroundColor = '#F7F7F7'
+    setBackgroundColor('#F7F7F7')
     const world = document.createElement('div')
     world.classList = 'dino-world'
     const scoreEl = document.createElement('div')
@@ -31,21 +32,10 @@ export class DinoGameModule extends Module {
     dino.className = 'dino-dino'
     dino.src = './public/dino.png'
 
-
-    // Получаем элементы с помощью JavaScript
-    // const dinoWorld = document.querySelector('.dino-world')
-    // const dinoScore = document.querySelector('.dino-score')
-    // const dinoStartScreen = document.querySelector('.dino-start-screen')
-    // const dinoGround = document.querySelector('.dino-ground')
-    // const dinoDino = document.querySelector('.dino-dino')
-    // const dinoCactus = document.querySelector('.dino-cactus')
-
-
     world.style.overflow = 'hidden'
     world.style.position = 'relative'
     world.style.width = '600px'
     world.style.height = '200px'
-    world.style.top = '200px'
 
     startEl.style.position = 'absolute'
     startEl.style.fontSize = '3vmin'
@@ -73,14 +63,9 @@ export class DinoGameModule extends Module {
     cactus.style.height = '50px'
     cactus.style.bottom = '0'
 
-
-
-    document.body.append(world)
-
     world.append(scoreEl, startEl, ground, cactus, dino)
-    // document.body.append(world)
+    
     addGameInContainerGames(world)
-
 
     let isGameStarted = false
     let isJumping = false

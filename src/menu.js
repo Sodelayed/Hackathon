@@ -6,7 +6,7 @@ import { SnakeGame } from "./modules/snakeGame.module" // Импорт моду�
 import { DinoGameModule } from "./modules/dinoGame.module"
 import { FlappyBirdModule } from "./modules/flappyBird.module"
 import { cleanerContainerGames } from './utils'
-import { setBackgroundImage } from './utils'
+import { setBackgroundColor } from './utils'
 
 export class ContextMenu extends Menu {
   
@@ -38,10 +38,8 @@ export class ContextMenu extends Menu {
         const liElement = menuItem.firstElementChild;
 
         liElement.addEventListener('click', () => {
-            // очищение контейнера с игрой
             cleanerContainerGames()
-            // установка фона
-            setBackgroundImage()
+            setBackgroundColor('#fff')
             moduleInstance.trigger();
             this.close();
         });

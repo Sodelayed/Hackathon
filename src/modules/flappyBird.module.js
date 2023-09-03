@@ -22,7 +22,6 @@ export class FlappyBirdModule extends Module {
   }
 
   start() {
-    
     setBackgroundImage('./public/images/flappyBird/bg-body.jpg')
 
     const birdContainer = this.#createElement('div', 'bird')
@@ -170,5 +169,3 @@ export class FlappyBirdModule extends Module {
     birdCanvas.addEventListener('click', moveUp)
   }
 }
-
-// фжыдвьажыьвжфьэвдлтпдэькпдж
