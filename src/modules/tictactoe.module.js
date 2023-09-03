@@ -50,6 +50,7 @@ export class TicTacToeModule extends Module {
             table.append(cell)
         }
         const statusText = document.createElement('h2')
+        statusText.className = 'tictactoe-text'
         statusText.id = "statusText"
 
         tictacContainer.append(statusText)
