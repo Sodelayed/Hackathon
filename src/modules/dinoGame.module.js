@@ -1,5 +1,6 @@
 // dinoGame.module.js
 import {Module} from '../core/module'
+import { addGameInContainerGames } from '../utils'
 
 export class DinoGameModule extends Module {
   constructor() {
@@ -72,7 +73,8 @@ export class DinoGameModule extends Module {
     document.body.append(world)
 
     world.append(scoreEl, startEl, ground, cactus, dino)
-    document.body.append(world)
+    // document.body.append(world)
+    addGameInContainerGames(world)
 
 
     let isGameStarted = false
