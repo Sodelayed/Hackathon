@@ -32,6 +32,7 @@ export class TicTacToeModule extends Module {
         tictacContainer.id = "tictacContainer"
         document.body.append(tictacContainer)
         const title = document.createElement('h1')
+        title.className = 'tictactoe-title'
         title.textContent = "Крестики-нолики"
         tictacContainer.append(title)
         const table = document.createElement('div')
@@ -47,6 +48,7 @@ export class TicTacToeModule extends Module {
             table.append(cell)
         }
         const statusText = document.createElement('h2')
+        statusText.className = 'tictactoe-text'
         statusText.id = "statusText"
 
         tictacContainer.append(statusText)
