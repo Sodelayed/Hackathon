@@ -1,5 +1,7 @@
 // Snake Game
 import {Module} from '../core/module'
+import { setBackgroundImage } from '../utils'
+import { addGameInContainerGames } from '../utils'
 
 export class SnakeGame extends Module {
   constructor() {
@@ -10,9 +12,6 @@ export class SnakeGame extends Module {
     // Create html (Прописать HTML)
     const snakeGame = document.createElement('div');
     snakeGame.setAttribute('id', 'snake-game');
-    snakeGame.style.background = 'url(../public/snakeBackground.png) no-repeat';
-    snakeGame.style.backgroundPosition = 'center';
-    snakeGame.style.backgroundSize = '100%';
     snakeGame.style.position = 'absolute';
     snakeGame.style.left = '0';
     snakeGame.style.right = '0';
@@ -55,7 +54,8 @@ export class SnakeGame extends Module {
     const gameBoardHTML = document.createElement('div');
     gameBoardHTML.setAttribute('id', 'game-board');
 
-    document.body.append(snakeGame);
+    setBackgroundImage('./public/snakeBackground.png')
+    addGameInContainerGames(snakeGame)
     snakeGame.append(previewHTML);
     snakeGame.append(gameBoardHTML);
     previewHTML.append(previewImage);
@@ -215,9 +215,6 @@ export class SnakeGame extends Module {
     function main(currentTime) {
       if (gameOver) {
         endGame();
-        setTimeout(function() {
-          location.reload();
-        }, 3000);
         return
       };
       window.requestAnimationFrame(main);

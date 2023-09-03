@@ -1,13 +1,14 @@
 // click.module.js
 import { Module } from '../core/module'
 import { setBackgroundImage } from '../utils'
+import { addGameInContainerGames } from '../utils'
+
 export class FlappyBirdModule extends Module {
   constructor() {
     super('flappyBird', 'Flappy Bird')
   }
 
   trigger() {
-    const flappyBird = document.querySelector('#flappyBird')
     this.start()
   }
 
@@ -21,7 +22,7 @@ export class FlappyBirdModule extends Module {
   }
 
   start() {
-    setBackgroundImage('url(./public/images/flappyBird/bg-body.jpg)')
+    setBackgroundImage('./public/images/flappyBird/bg-body.jpg')
 
     const birdContainer = this.#createElement('div', 'bird')
     const birdMenu = this.#createElement('div', 'bird__menu')
@@ -34,7 +35,7 @@ export class FlappyBirdModule extends Module {
     birdMenu.append(birdMenuContent)
     birdContainer.append(birdMenu, birdCanvas)
 
-    document.body.append(birdContainer)
+    addGameInContainerGames(birdContainer)
 
     birdCanvas.width = 288
     birdCanvas.height = 512
@@ -168,5 +169,3 @@ export class FlappyBirdModule extends Module {
     birdCanvas.addEventListener('click', moveUp)
   }
 }
-
-// фжыдвьажыьвжфьэвдлтпдэькпдж

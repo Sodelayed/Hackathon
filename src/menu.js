@@ -5,6 +5,8 @@ import { TicTacToeModule } from "./modules/tictactoe.module"
 import { SnakeGame } from "./modules/snakeGame.module" // Импорт модуля игры Змейка
 import { DinoGameModule } from "./modules/dinoGame.module"
 import { FlappyBirdModule } from "./modules/flappyBird.module"
+import { cleanerContainerGames } from './utils'
+import { setBackgroundColor } from './utils'
 
 export class ContextMenu extends Menu {
   
@@ -36,6 +38,8 @@ export class ContextMenu extends Menu {
         const liElement = menuItem.firstElementChild;
 
         liElement.addEventListener('click', () => {
+            cleanerContainerGames()
+            setBackgroundColor('#fff')
             moduleInstance.trigger();
             this.close();
         });

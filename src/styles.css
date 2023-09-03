@@ -1,3 +1,4 @@
+@import './_normalize.css';
 
 @font-face {
     font-family: "Super Mario";
@@ -5,20 +6,31 @@
 }
 
 body {
-    min-height: 100vh;
     font-size: 14px;
-    
     font-family: "Super Mario", sans-serif;
-    min-height: 100vh;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    flex-direction: column;
+}
+
+.wrapper {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+#container-games {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 * {
@@ -137,6 +149,12 @@ body {
   
   .d-none {
     display: none !important;
+  }
+
+  .food {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   /* end flappy bird */
