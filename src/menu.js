@@ -4,6 +4,7 @@ import { AsteroidEvasionModule } from "./modules/asteroidEvasion.module" // Им
 import { TicTacToeModule } from "./modules/tictactoe.module"
 import { SnakeGame } from "./modules/snakeGame.module" // Импорт модуля игры Змейка
 import { DinoGameModule } from "./modules/dinoGame.module"
+import { FlappyBirdModule } from "./modules/flappyBird.module"
 
 export class ContextMenu extends Menu {
   
@@ -55,4 +56,7 @@ const snakeGameModule = new SnakeGame();
 contextMenu.add(snakeGameModule);
 
 const dinoGameModule = new DinoGameModule()
-contextMenu.add(dinoGameModule)
+contextMenu.add(dinoGameModule);
+
+const flappyBirdModule = new FlappyBirdModule()
+contextMenu.add(flappyBirdModule)

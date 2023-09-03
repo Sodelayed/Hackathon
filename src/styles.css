@@ -1,24 +1,33 @@
+
 @font-face {
     font-family: "Super Mario";
     src: url("../public/fonts/supermario286rusbylyajka.otf");
 }
+
+body {
+    min-height: 100vh;
+    font-size: 14px;
+    
+    font-family: "Super Mario", sans-serif;
+    min-height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    flex-direction: column;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     user-select: none;
 }
-body {
-    font-size: 14px;
-    font-family: "Super Mario", sans-serif;
-    height: 100vh;
-    width: 100%;
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+
 #welcome{
     text-align: center;
     font-size: 2rem;
@@ -27,6 +36,7 @@ body {
     display: none;
     background: #1b1a1a;
 }
+
 .menu {
     position: fixed;
     z-index: 1000;
@@ -64,13 +74,69 @@ body {
     font-size: 50px;
     cursor: pointer;
 }
+
 #tictacContainer{
     font-family: "Permanent Marker", cursive;
     text-align: center;
 }
+
 #cellContainer{
     display: grid;
     grid-template-columns: repeat(3, auto);
     width: 225px;
     margin: auto;
 }
+
+
+/* start flappy bird */
+.bird {
+    position: relative;
+    width: 288px;
+    height: 512px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+  .bird__menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../public/images/flappyBird/bgMenu.png);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .bird__menu_content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .bird__menu_start {
+    position: absolute;
+    width: 153px;
+    height: 42px;
+    background-image: url(../public/images/flappyBird/bgButton.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    bottom: 25%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transition: all 0.3s;
+  }
+
+  .bird__menu_start:hover {
+    transition: all 0.3s;
+    opacity: 0.7;
+  }
+  
+  .d-none {
+    display: none !important;
+  }
+
+  /* end flappy bird */
